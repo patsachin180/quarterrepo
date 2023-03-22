@@ -1,0 +1,16 @@
+---
+ - hosts: devlinux[1]
+   user: ansible
+   become: yes
+   connection: ssh
+   gather_facts: yes
+   
+   tasks:
+     - name: install httpd
+       action: yum pkg=httpd state=present
+       
+     - name: start httpd
+       action: service name=httpd state=started
+       
+     - name: copy index file
+       action: copy src=2023Q2/index.html dest=/var/www/html/
