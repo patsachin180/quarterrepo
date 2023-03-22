@@ -7,7 +7,7 @@
    
    tasks:
       - name: install httpd
-        action: yum pkg=http state=present
+        action: yum pkg=httpd state=present
         notify: start httpd
       - name: start httpd
         action: service name=httpd state=started
