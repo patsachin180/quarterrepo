@@ -11,3 +11,6 @@
      
       - name: start httpd
         action: service name=httpd state=started
+        
+      - name: copy index file
+        action: copy src=index.html dest=/var/www/html/
