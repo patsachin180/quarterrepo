@@ -13,4 +13,4 @@
        action: service name=httpd state=started
        
      - name: copy index file
-       action: copy src=/2023Q2/files/2023Q2/index.html dest=/var/www/html/
+       action: copy src=index.html dest=/var/www/html/
