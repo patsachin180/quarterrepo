@@ -1,0 +1,7 @@
+---
+-hosts: devlinux
+ user: ansible
+ become: yes
+ gather_facts: yes
+ connection: ssh
+
