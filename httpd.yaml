@@ -1,7 +1,13 @@
 ---
--hosts: devlinux
- user: ansible
- become: yes
- gather_facts: yes
- connection: ssh
-
+ - hosts: devlinux[0]
+   user: ansible
+   become: yes
+   connection: ssh
+   gather_facts: yes
+   
+   tasks:
+      - name: install httpd
+        action: yum pkg=http state=present
+        notify: start httpd
+      - name: start httpd
+        action: service name=httpd state=started
